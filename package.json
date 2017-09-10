@@ -1,0 +1,19 @@
+{
+  "name": "skeletons",
+  "version": "1.0.0",
+  "description": "Skeletons of scripts and other stuff.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sandinmyjoints/skeletons.git"
+  },
+  "keywords": [],
+  "author": "William Bert <william.bert@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sandinmyjoints/skeletons/issues"
+  },
+  "homepage": "https://github.com/sandinmyjoints/skeletons#readme"
+}
