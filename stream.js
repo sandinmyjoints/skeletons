@@ -14,10 +14,19 @@ const ndjson = require('ndjson');
 const through = require('through2');
 const request = require('request');
 const argv = require('minimist')(process.argv.slice(2));
+const ensureGunzip = require('ensure-gunzip');
 
 const infile = argv.infile;
 const outfile = argv.outfile;
-const instream = infile ? fs.createReadStream(infile) : process.stdin;
+
+let instream = process.stdin;
+
+if (infile) {
+  const possiblyZippedStream = fs.createReadStream(infile);
+  const definitelyUnzippedStream = ensureGunzip(possiblyZippedStream);
+  instream = definitelyUnzippedStream;
+}
+
 const outstream = outfile ? fs.createWriteStream(outfile) : process.stdout;
 
 function doSomething(obj, enc, cb) {
