@@ -12,13 +12,19 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
 
     parser.add_argument(
-        "infile", nargs="?", default="-",
-        metavar="INPUT_FILE", type=argparse.FileType("r"),
+        "infile",
+        nargs="?",
+        default="-",
+        metavar="INPUT_FILE",
+        type=argparse.FileType("r"),
         help="path to the input file (read from stdin if omitted)")
 
     parser.add_argument(
-        "outfile", nargs="?", default="-",
-        metavar="OUTPUT_FILE", type=argparse.FileType("w"),
+        "outfile",
+        nargs="?",
+        default="-",
+        metavar="OUTPUT_FILE",
+        type=argparse.FileType("w"),
         help="path to the output file (write to stdout if omitted)")
 
     args = parser.parse_args()
